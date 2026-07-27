@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import LeadForm from "@/components/LeadForm";
+import HoursLines from '@/components/HoursLines';
 
 export const metadata: Metadata = {
   title: "Contact Us | Atlanta Garage Doors Repair",
@@ -77,9 +78,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Business Hours</h3>
-                    <p className="text-gray-700">Monday - Friday: 7:00 AM - 7:00 PM</p>
-                    <p className="text-gray-700">Saturday: 8:00 AM - 5:00 PM</p>
-                    <p className="text-gray-700">Sunday: Emergency service available</p>
+                    <HoursLines className="text-gray-700" showClosed={false} />
+                    <p className="text-gray-700">Emergency service available 24/7</p>
                   </div>
                 </div>
               </div>
