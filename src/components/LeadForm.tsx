@@ -25,6 +25,11 @@ export default function LeadForm() {
       });
       
       if (response.ok) {
+        // GA4/GTM conversion event — picked up by the site's GTM container when present.
+        const dlWindow = window as unknown as { dataLayer?: Record<string, unknown>[] };
+        dlWindow.dataLayer = dlWindow.dataLayer ?? [];
+        dlWindow.dataLayer.push({ event: "generate_lead" });
+
         setSubmitted(true);
         setFormData({ name: "", email: "", phone: "", service: "", message: "" });
       }
