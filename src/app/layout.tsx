@@ -20,6 +20,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* RFM site data - pushed before GTM loads */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  rfm: {
+    schema_version: "1.0",
+    site_id: "atlanta_garage_doors_repair",
+    provider_id: "250f06df-ceb1-4dde-abf7-a5a2a54c4359",
+    provider_name: "Atlanta Garage Doors Repair",
+    service_category: "garage_door_repair",
+    market: "atlanta"
+  }
+});`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
